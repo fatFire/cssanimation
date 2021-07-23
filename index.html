@@ -114,9 +114,9 @@
       opacity: 0;
       position: relative;
     }
-    .left:hover .logo-text {
+    /* .left:hover .logo-text {
       animation: logo-text-ani 1s 1 forwards;
-    }
+    } */
     @keyframes logo-text-ani {
       from {
         opacity: 0;
@@ -156,7 +156,8 @@
       color: rgb(66, 66, 66);
     }
     .list-item span {
-      position: relative;
+      /* position: relative; */
+      transform-origin: left;
     }
     /* .list-item:hover span {
       animation: list-item-ani .5s 1 forwards;
@@ -164,21 +165,21 @@
     @keyframes list-item-ani {
       from {
         left: 0;
-        font-size: 16px;
+        transform: scale(1);
       }
       to {
         left: 5px;
-        font-size: 12px;
+        transform: scale(0.8);
       }
     }
     @keyframes list-item-ani-reverse {
       from {
         left: 5px;
-        font-size: 12px;
+        transform: scale(0.8) ;
       }
       to {
         left: 0;
-        font-size: 16px;
+        transform: scale(1);
       }
     }
     .detail {
@@ -186,6 +187,7 @@
       margin-left: 5px;
       opacity: 0;
       font-size: 14px;
+      position: relative;
     }
     /* .list-item:hover .detail {
       animation: item-detail .5s 1 forwards;
@@ -193,24 +195,24 @@
     @keyframes item-detail {
       from {
         opacity: 0;
-        top: -40px;
+        top: 10px;
         font-size: 14px;
       }
       to {
         opacity: 1;
-        top: -5px;
+        top: -2px;
         font-size: 14px;
       }
     }
     @keyframes item-detail-reverse {
       from {
         opacity: 1;
-        top: -5px;
+        top: -2px;
         font-size: 14px;
       }
       to {
         opacity: 0;
-        top: -40px;
+        top: 10px;
         font-size: 14px;
       }
     }
@@ -344,17 +346,17 @@
       item.addEventListener('mouseout', function() {
         this.classList.remove('active')
         const itemChildren = this.children
-        itemChildren[0].style.animation = 'list-item-ani-reverse .5s 1 forwards'
-        itemChildren[1].style.animation = 'list-item-ani-reverse .5s 1 forwards'
-        itemChildren[2].style.animation = 'item-detail-reverse .5s 1 forwards'
+        itemChildren[0].style.animation = 'list-item-ani-reverse 1s 1 forwards'
+        itemChildren[1].style.animation = 'list-item-ani-reverse 1s 1 forwards'
+        itemChildren[2].style.animation = 'item-detail-reverse 1s 1 forwards'
       }) 
       item.addEventListener('mouseover', function() {
         items[0].classList.remove('active')
         this.classList.add('active')
         const itemChildren = this.children
-        itemChildren[0].style.animation = 'list-item-ani .5s 1 forwards'
-        itemChildren[1].style.animation = 'list-item-ani .5s 1 forwards'
-        itemChildren[2].style.animation = 'item-detail .5s 1 forwards'
+        itemChildren[0].style.animation = 'list-item-ani 1s 1 forwards'
+        itemChildren[1].style.animation = 'list-item-ani 1s 1 forwards'
+        itemChildren[2].style.animation = 'item-detail 1s 1 forwards'
       }) 
     })
     const left = document.querySelector('.left')
