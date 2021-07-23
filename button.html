@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(244, 244, 244);
+    }
+    .line {
+      width: 200px;
+      height: 10px;
+      border-radius: 10px;
+      background-color: rgb(111, 179, 232);
+    }
+    .item1 {
+      animation: down 1s infinite alternate;
+      animation-play-state: paused;
+    }
+    .item2 {
+      animation: disappear 1s infinite alternate;
+      animation-play-state: paused;
+    }
+    .item3 {
+      animation: top 1s infinite alternate;
+      animation-play-state: paused;
+    }
+    @keyframes top {
+      from {
+        transform: translateY(0) rotate(0);
+      }
+      50% {
+        transform: translateY(-100px) rotate(0);
+      }
+      to {
+        transform: translateY(-100px) rotate(45deg);
+      }
+    }
+    @keyframes down {
+      from {
+        transform: translateY(0) rotate(0);
+      }
+      50% {
+        transform: translateY(100px) rotate(0);
+      }
+      to {
+        transform: translateY(100px) rotate(-45deg);
+      }
+    }
+    @keyframes disappear {
+      from {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="line item1"></div>
+    <div class="line item2"></div>
+    <div class="line item3"></div>
+  </div>
+
+  <script>
+    let wrap = document.querySelector('.wrap')
+    wrap.addEventListener('click', (e) => {
+      let lines = document.querySelectorAll('.line')
+      lines.forEach((item) => {
+        item.style.animationPlayState = 'running'
+      })
+    })
+    wrap.addEventListener('animationiteration', (evt) => {
+      let lines = document.querySelectorAll('.line')
+      lines.forEach((item) => {
+        item.style.animationPlayState = 'paused'
+      })
+    })
+  </script>
+</body>
+</html>

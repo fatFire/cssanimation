@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      padding: 0;
+      margin: 0;
+      background-color: rgb(240, 248, 248);
+      padding-left: 100px;
+      height: 100%;
+    }
+    .item {
+      width: 400px;
+      height: 80px;
+      background-color: #fff;
+      /* animation: movein 2s 1 forwards; */
+      
+    }
+
+    .item2 {
+      
+      width: 400px;
+      height: 80px;
+      background-color: #fff;
+      position: relative;
+      animation: moveup 1s 1 forwards;
+    }
+    
+    .item3 {
+      width: 400px;
+      height: 80px;
+      margin-top: 30px;
+      background-color: #fff;
+      /* animation: movein 2s 1 forwards; */
+      
+    }
+    @keyframes movein {
+      from {
+        opacity: 0;
+        margin-left: 0;
+      }
+
+      to {
+        opacity: 1;
+        margin-left: 50px;
+      }
+    }
+    @keyframes moveup {
+      from {
+        top: 80px;
+        opacity: 0;
+      }
+      to {
+        top: 0px;
+        opacity: 1;
+      }
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+      display: block;
+      animation: logo-rotate 3s linear infinite forwards;
+    }
+    @keyframes logo-rotate {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .item4 {
+      width: 100px;
+      height: 100px;
+      background-color: #bfa;
+      
+    }
+    /* .item4:hover {
+      animation: large 1s 1 reverse forwards;
+    } */
+    @keyframes large {
+      from {
+        width: 100px;
+      }
+      to {
+        width: 400px;
+      }
+    }
+    @keyframes small {
+      from {
+        width: 400px;
+      }
+      to {
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="item">11111</div>
+  <div class="item2">item2</div>
+  <div class="item3"> 3333 </div>
+   
+  <img src="logo.svg" alt="">
+
+  <div class="item4"></div>
+
+  <div id="app">houdunren.com</div>
+  <script>
+    // const app = document.querySelector('#app')
+    // app.addEventListener('click', function () {
+    //   this.style.color = 'red'
+    // })
+    const item4 = document.querySelector('.item4')
+    item4.addEventListener('mouseover', (e) => {
+      item4.style.animation = 'large 1s 1 forwards'
+    })
+    item4.addEventListener('mouseout', (e) => {
+      // this.style.animation = 'animation: large 1s 1 forwards'
+      
+      item4.style.animation = 'small 1s 1s 1 both'
+    })
+
+  </script>
+</body>
+</html>
+1s ease 0s 1 normal forwards running small
