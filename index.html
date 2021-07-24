@@ -346,17 +346,17 @@
       item.addEventListener('mouseout', function() {
         this.classList.remove('active')
         const itemChildren = this.children
-        itemChildren[0].style.animation = 'list-item-ani-reverse 1s 1 forwards'
-        itemChildren[1].style.animation = 'list-item-ani-reverse 1s 1 forwards'
-        itemChildren[2].style.animation = 'item-detail-reverse 1s 1 forwards'
+        itemChildren[0].style.animation = 'list-item-ani-reverse .5s 1 forwards'
+        itemChildren[1].style.animation = 'list-item-ani-reverse .5s 1 forwards'
+        itemChildren[2].style.animation = 'item-detail-reverse .5s 1 forwards'
       }) 
       item.addEventListener('mouseover', function() {
         items[0].classList.remove('active')
         this.classList.add('active')
         const itemChildren = this.children
-        itemChildren[0].style.animation = 'list-item-ani 1s 1 forwards'
-        itemChildren[1].style.animation = 'list-item-ani 1s 1 forwards'
-        itemChildren[2].style.animation = 'item-detail 1s 1 forwards'
+        itemChildren[0].style.animation = 'list-item-ani .5s 1 forwards'
+        itemChildren[1].style.animation = 'list-item-ani .5s 1 forwards'
+        itemChildren[2].style.animation = 'item-detail .5s 1 forwards'
       }) 
     })
     const left = document.querySelector('.left')
